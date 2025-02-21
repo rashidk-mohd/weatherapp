@@ -21,11 +21,15 @@ class WeatherRepository {
         );
       } else {
         return WeatherData(
-error: "Something Went Wrong"
-        )
+error: "Something Went Wrong",
+ model: null
+        );
       }
     } catch (e) {
-      log("Exception in fetching weather data: $e");
+      return WeatherData(
+error: "Something Went Wrong",
+ model: null
+        );
     }
   }
 }
